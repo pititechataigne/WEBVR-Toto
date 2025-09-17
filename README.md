@@ -2,4 +2,4 @@
 
 ##WEBVR
 * [melicia_talavera_texture](../WEBVR-Toto/test.html)
-* [melicia_talavera_labyrinthe](../WEBVR/labirinthe.html)
+* [melicia_talavera_labyrinthe](../WEBVR/labyrinthe.html)
