@@ -1,6 +1,7 @@
 <html>
 
   <head>
+    <meta charset="utf-8">
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script> 
     <!-- site pour A frame -->
   </head>
@@ -17,9 +18,10 @@
       </a-assets>
 
    
-      
+      <!-- NOTES-->
+           
            <!-- NOTEpour déplacer tout ou plusieurs elements à la fois-->
-          <!-- 
+           <!-- 
 
           <a-entity position= "0 0 0 "> 
            mettre ici tout mes objt et entités de la section formes que je veux déplacer  
@@ -27,10 +29,28 @@
 
           -->
 
+          <!-- NOTEpour faire une MIXINS-->
+          <!-- 
+             On créer une ou plusieurs propriétes que je veux appliquer avec une mixin (ex: il sera bleu, de tel metres, ect..) puis on ajoute l'id mixine aux obj ou entité auquel la liste de propriétés vont s'appliquer
+             EXEMPLE :
 
-   <!-- formes -->
-    
-    
+             1)ds mes asset je crée ma mixin
+
+                  <a-assets>
+                  <a-mixin id="mur" material="color: red" position="-1 0.5 -3" rotation="0 45 0" ></a-mixin>
+                  </a-assets>
+            
+            2)ds les obj a qui je veux appliquer ma liste de proprietes
+
+                  <a-box  mixin="mur" ></a-box>
+
+
+          -->
+                  
+
+
+   <!--formes -->
+  
     <a-entity position="0.43 0 4.09"> 
 
       <a-plane id="A" src="#eau" material="side: double" position="0.65247 1.4902 -5.99893" rotation="0 180 0" width="4" height="3" color="#7BC8A4" geometry="width: 2.72">
