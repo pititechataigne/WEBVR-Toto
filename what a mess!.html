@@ -13,24 +13,70 @@
 
     <a-scene physics background="color: white">
        
+
+
+        
         <a-assets>
+
+            <!--Mes elements 3D -->
             <a-asset-item id="glbmodelSKULL" src="./assets/3Dmodels/exp3_obj_skull/skull.glb"></a-asset-item>
             <a-asset-item id="female" src="./assets/3Dmodels/exp4_glb_female_male/female.glb"></a-asset-item>
             <a-asset-item id="male" src="./assets/3Dmodels/exp4_glb_female_male/male.glb"></a-asset-item>
+            <a-asset-item id="male" src="./assets/3Dmodels/44-moon-photorealistic-2k/Moon 2K.mtl"></a-asset-item>
+
+
+             <!--Mes img textures -->
+            <img id="eau" src="./assets/images/texture_eau.jpeg">
+            <img id="yeux1" src="./assets/images/yeux1.jpg">
+            <img id="yeux2" src="./assets/images/yeux2.jpg">
+            <img id="yeux3" src="./assets/images/yeux3.jpg">
+            <img id="yeux4" src="./assets/images/yeux4.jpg">
+
+
+             <!--Mes mixines -->
+             <a-mixin id="mur" src="#eau" material="side: double" geometry="width: 3" scale="1 1 0.88" rotation="0 180 0" width="4" height="3"> 
+             </a-mixin>
+                  
         </a-assets>
 
+
+        <!--Mes elements 3D -->
         <a-entity id="skull"gltf-model="#glbmodelSKULL" position="0 0 -5" scale="0.1 0.1 0.1" rotation="-90 -30 0"></a-entity>
 
         <a-entity id="female" gltf-model="./assets/3Dmodels/exp4_glb_female_male/female.glb" position="-0.75613 1.42134 -0.85275" obj-model="" scale="0.03171 0.01497 0.01497" rotation="-1800 -32.65 0" height="3" color="#7BC8A4" geometry="depth: 1.95; height: 1.31; width: 0.52">
         </a-entity>
-        <a-entity id="male" gltf-model="#male" position="-0.75613 1.42134 -0.85275" obj-model="" scale="0.03171 0.01497 0.01497" rotation="-1800 -32.65 0" height="3" color="#7BC8A4" geometry="depth: 1.95; height: 1.31; width: 0.52">
+        
+        <a-entity id="male" gltf-model="./assets/3Dmodels/exp4_glb_female_male/male.glb" position="0.01353 1.05355 -0.85275" obj-model="" scale="-0.01148 -0.01148 -0.01148" rotation="0 -90 180" height="3" color="#7BC8A4" geometry="depth: 1.95; height: 1.63; width: 0.24">
         </a-entity>
 
-        <a-plane id="sol" position="0 0 0" rotation="-90 0 0" width="3" height="3" color="#7BC8A4"></a-plane>    
-        <a-sky color="#ECECEC"></a-sky>
+        <a-entity position="0 1 -5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+
+        
+
+        <!--Mes murs planes -->
+
+      <a-entity position="0.43 0 4.09"> 
+         
+       
+         <a-plane id="B" src="#yeux1" position="-0.42616 1.49668 -2.59146" width="4" height="3" color="#7BC8A4" geometry="width: 3" mixin="mur">
+         </a-plane>
     
+         <a-plane id="C" src="#yeux2" position="1.07239 1.49423 -4.08857" rotation="0 90 0" width="4" height="3" color="#7BC8A4" mixin="mur" geometry="width: 3">
+         </a-plane>
     
-        <a-entity camera look-controls wasd-controls="acceleration: 10" position="0 1.600 0"></a-entity>
+         <a-plane id="D" src="#yeux3" position="-1.93155 1.49296 -4.08413" rotation="0 -90 0" width="4" height="3" color="#7BC8A4" mixin="mur" geometry="width: 3">
+         </a-plane>
+      </a-entity>
+
+
+       
+       
+       <!--Sol, ciel et camera  -->
+
+       <a-plane id="sol" position="0 0 0" rotation="-90 0 0" width="3" height="3" color="#7BC8A4"></a-plane>    
+       <a-sky color="#ECECEC"></a-sky>
+    
+       <a-entity camera look-controls wasd-controls="acceleration: 10" position="0 1.600 0"></a-entity>
 
 
     </a-scene>
